@@ -11,14 +11,14 @@ class Handler implements URLHandler {
             return String.format("Nik & Wen's Number: %d", num);
         } else if (url.getPath().equals("/increment")) {
             num += 1;
-            return String.format("Nik's Number incremented!");
+            return String.format("Nik & Wen's Number incremented!");
         } else {
             System.out.println("Path: " + url.getPath());
             if (url.getPath().contains("/add")) {
                 String[] parameters = url.getQuery().split("=");
                 if (parameters[0].equals("count")) {
                     num += Integer.parseInt(parameters[1]);
-                    return String.format("Nik's Number increased by %s! It's now %d", parameters[1], num);
+                    return String.format("Nik and Wen's Number increased by %s! It's now %d", parameters[1], num);
                 }
             }
             return "404 Not Found!";
